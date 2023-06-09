@@ -1,11 +1,11 @@
-import { getUsers } from "@/mongo/users";
+import { getAllUsers } from "@/mongo/crud";
 import { NextResponse } from 'next/server';
 
 
 export async function GET() {
-    const {users} = await getUsers()
+    const {users} = await getAllUsers()
    try{
-       return NextResponse.json({ users });
+    return NextResponse.json({ users });
    }catch(error){
     return NextResponse.json({error})
    }

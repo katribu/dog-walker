@@ -16,7 +16,7 @@ async function run(){
    await run()
 })()
 
-export async function getUsers() {
+export async function getAllUsers() {
     try{
         if(!users) await run()
         const result = await users.find({}).toArray()

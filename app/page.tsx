@@ -1,12 +1,9 @@
-import { getData } from "@/lib/crud";
+import { User } from "@/interfaces";
+import { getAllUsers } from "@/mongo/crud";
 
-interface User {
-  FirstName:string;
-  LastName:string;
-}
+const Home = async () => {
+const result = await getAllUsers()
 
-const Home = async() => {
-const result = await getData()
 const users = result.users.map((user:User,index:number) => {
   return (
     <div key={index}>
